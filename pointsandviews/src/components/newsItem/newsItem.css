@@ -1,0 +1,17 @@
+.newsitem {
+    font-size: 20px;
+    margin-left: 10px;
+}
+
+.ptr {
+    cursor: pointer;
+}
+
+.author {
+    padding-left: 120px;
+    font-style: italic;
+}
+
+.newsitem > span {
+    padding-left: 10px;
+}

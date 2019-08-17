@@ -176,8 +176,6 @@ class Point extends Component {
         <FontAwesomeIcon icon={["fas", "phone"]} />
         <span> {this.props.point.coordinates.geo.long} </span>
         </p>
-            <BrowserRouter>
-        <switch>
         <Link to={{
             pathname:`point/${this.props.point.cursor}`,
                 state:{
@@ -203,8 +201,6 @@ class Point extends Component {
             <FontAwesomeIcon icon={["fas", "phone"]} />
             </p>
         </Link>
-     </switch>
-            </BrowserRouter>
 
         </Fragment>
     )}

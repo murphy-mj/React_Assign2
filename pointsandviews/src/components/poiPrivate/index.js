@@ -11,16 +11,24 @@ import PrivateProfile from "../poiPrivate/privateProfile";
 
 export default ({ point,...rest}) => {
     const name = capitalize(`${point.name}`);
+    const { id } = `${point.cursor}`;
+   console.log(`"private point' prev menu"${rest.prevmenu}`);
+   console.log({point});
+   console.log(`${point.cursor}`);
+   console.log(`/point/${point.cursor}`);
+
     return (
         <Fragment>
         <div className="row">
 
         <div className="col-2">
         <Link to={{
-        pathname:"/app",
+        //pathname:"/app",
+        // pathname:rest.prevmenu,
+         pathname:`/point/${point.cursor}`,
             state:{
             testa:`${point.poiType}`,
-                prevmenu: null
+                prevmenu: rest.prevmenu
         }
         }}>
         <FontAwesomeIcon icon={["fas", "arrow-circle-left"]} size="3x" />

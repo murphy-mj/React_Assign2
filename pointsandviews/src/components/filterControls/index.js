@@ -21,7 +21,7 @@ export default class FilterControls extends Component {
     };
 
     render() {
-
+        console.log("In filter control  ")
         return (
             <div className="container-fluid">
             <div className="row bg-warning">

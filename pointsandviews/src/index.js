@@ -13,17 +13,40 @@ import NewsForm from "./components/newsForm/";
 import Login from "./components/login/";
 import PrivateRoute from "./components/privateRoute/";
 import PoiPrivate from "./components/poiPrivate/";
-//import jsonResponse from './dataStore/all.js';
+const jsonResponse = require('./dataStore/all.json');
 // if (jsonResponse) {
 //  let results = jsonResponse;
 //JSON.parse(res.text);
 
+//request.get("https://edeleastar.github.io/oileain-api/all.json").end((error, res) => {
+//    if (res) {
+//        let results = JSON.parse(res.text);
+//        console.log("router index");
+        //          console.log(this.props);
+        //          console.log(results[0].coastalZone);
+//        api.initializePoints3(results);
+        //     api.initializePoints4(results);
+        //   api.initializePoints2(results[0].pois);
+//        this.setState({});
+//    } else {
+//        console.log("problem with cop did mount  ");
+//        console.log(error);
+
+//    }
+// });
+
+
+
+
+
+
+
+
 class Router extends Component {
     componentDidMount() {
         console.log("in comp did mount");
-        request.get("https://edeleastar.github.io/oileain-api/all.json").end((error, res) => {
-            if (res) {
-                let results = JSON.parse(res.text);
+                let results = jsonResponse;
+
                 console.log("router index");
                 //          console.log(this.props);
                 //          console.log(results[0].coastalZone);
@@ -31,12 +54,6 @@ class Router extends Component {
                 //     api.initializePoints4(results);
                 //   api.initializePoints2(results[0].pois);
                 this.setState({});
-            } else {
-                console.log("problem with cop did mount  ");
-                console.log(error);
-
-           }
-     });
     }
 
 

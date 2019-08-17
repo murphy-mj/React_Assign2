@@ -2,6 +2,7 @@ import _ from "lodash";
 import PointItem from "../components/pointItem/";
 import React, { Component, Fragment } from 'react';
 import request from "superagent";
+const jsonResponse = require('./all.json');
 
 class StubAPI {
     constructor() {
@@ -28,7 +29,7 @@ class StubAPI {
                 link: null,
                 author: "Joseph Mennn",
                 comments: [],
-                cusror:6243,
+                cursor:6243,
                 upvotes: 12
             },
             {
@@ -38,7 +39,7 @@ class StubAPI {
                 link: "https://possiblywrong.wordpress.com/",
                 author: "unknown",
                 comments: [],
-                cusror:5394,
+                cursor:5394,
                 upvotes: 2
             },
             {
@@ -48,7 +49,7 @@ class StubAPI {
                     "https://newleftreview.org/issues/II97/articles/mike-davis-the-coming-desert",
                 author: "MIKE DAVIS",
                 comments: [],
-                cusror:2940,
+                cursor:2940,
                 upvotes: 8
             },
             {
@@ -57,7 +58,7 @@ class StubAPI {
                 link: "https://www.bbc.com/news/health-47937405",
                 author: "James Gallagher",
                 comments: [],
-                cusror:2940,
+                cursor:2940,
                 upvotes: 10
             },
             {
@@ -66,7 +67,7 @@ class StubAPI {
                 link: "https://www.nature.com/articles/d41586-019-01252-0",
                 author: "Matthew Warren",
                 comments: [],
-                cusror:523,
+                cursor:523,
                 upvotes: 20
             }
         ];
@@ -76,14 +77,14 @@ class StubAPI {
                 id: 1,
                 title: "Why You Can No Longer Get Lost in the Crowd",
                 author: "Woodrow Hartzog",
-                cusror:2940,
+                cursor:2940,
                 upvotes: 10
             },
             {
                 id: 2,
                 title: "Samsung's folding phone breaks for reviewers",
                 author: "Dave Lee",
-                cusror:523,
+                cursor:523,
                 upvotes: 14
             }];
 
@@ -109,9 +110,10 @@ class StubAPI {
 
     getAllPoints1(poiType) {
         //const points1 =[];
-        request.get("https://edeleastar.github.io/oileain-api/all.json").end((error, res) => {
-            if (res) {
-                let results = JSON.parse(res.text);
+      //  request.get("https://edeleastar.github.io/oileain-api/all.json").end((error, res) => {
+      //      if (res) {
+                let results = jsonResponse;
+      //          let results = JSON.parse(res.text);
                 console.log("get All with PoiTpe");
                 console.log(poiType);
                 let index= 0;
@@ -137,11 +139,11 @@ class StubAPI {
                 // api.initializePoints(results[index].pois);
                 //   api.initializePoints2(results[0].pois);
                 // this.setState({});
-            } else {
-                console.log(error);
-                console.log("issue with results");
-            }
-        });
+    //        } else {
+    //            console.log(error);
+   //             console.log("issue with results");
+   //         }
+   //     });
         //  console.log(points1[0][0].cursor + "2nd array first obj");
 
         return this.points1;
@@ -150,9 +152,10 @@ class StubAPI {
 
     getAllPoints2(poiType) {
         this.points1 = [];
-        request.get("https://edeleastar.github.io/oileain-api/all.json").end((error, res) => {
-            if (res) {
-                let results = JSON.parse(res.text);
+        let results = jsonResponse;
+      //  request.get("https://edeleastar.github.io/oileain-api/all.json").end((error, res) => {
+      //      if (res) {
+     //           let results = JSON.parse(res.text);
                 console.log("get All with PoiTpe2");
               //  console.log(poiType);
                 //let index= 0;
@@ -192,11 +195,11 @@ class StubAPI {
                 // api.initializePoints(results[index].pois);
                 //   api.initializePoints2(results[0].pois);
                 // this.setState({});
-            } else {
-                console.log(error);
-                console.log("issue with results");
-            }
-        });
+    //        } else {
+    //            console.log(error);
+    //            console.log("issue with results");
+    //        }
+    //    });
         console.log(this.points1 + "ret points one");
 
         return this.points1;

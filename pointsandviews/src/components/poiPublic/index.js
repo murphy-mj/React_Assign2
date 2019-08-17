@@ -10,7 +10,7 @@ const REACT_APP_GAPI_KEY1 = "AIzaSyD5sVluWImCyGXbY-hizgc61Pec_-yTTJc";
     //process.env.REACT_APP_GAPI_KEY.trim();
 
 
-export default ({ point}) => {
+export default ({ point, ...rest}) => {
     const str1 = `https://maps.googleapis.com/maps/api/js?key=${REACT_APP_GAPI_KEY1}&v=3.exp&libraries=geometry,drawing,places`;
     const name = capitalize(`${point.name}`);
     console.log(`${point.coordinates.geo.lat}`);
@@ -18,16 +18,21 @@ export default ({ point}) => {
   //  const location = {lng:${point.coordinates.geo.long},lat:${point.coordinates.geo.lat}};
     const location = {lng:-7.142379, lat: 55.89 };
     console.log(`${point.poiType}` +  "  poi Public prop");
+    console.log(`${rest.prevmenu}` +  "  poi previous menu");
+
+
+
     return (
         <Fragment>
         <div className="row">
 
         <div className="col-1">
         <Link to={{
-            pathname:"/app",
-            state:{
+          pathname:"/app",
+          state:{
                 testa:`${point.poiType}`,
-                prevmenu: null }}} >
+                prevmenu: `${rest.prevmenu}`}
+        }}>
         <FontAwesomeIcon icon={["fas", "arrow-circle-left"]} size="3x" />
         <span>Back</span>
         </Link>
@@ -46,7 +51,7 @@ export default ({ point}) => {
         </div>
 
         <div className="col-3">
-      //  <PublicProfile point={point} />
+
         </div>
 
         <div className="col-5" >

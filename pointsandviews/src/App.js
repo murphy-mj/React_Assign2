@@ -26,11 +26,13 @@ class App extends Component {
     requestComment = (comment,promoter,cursor) => {
         console.log(" request comment "+comment+" "+cursor);
         api.addComment(comment,promoter,cursor);
-
+        this.setState({});
     }
 
     handleChange = (type, value) => {
         type === "name" ? this.setState({ search: value }) : this.setState({ poiType: value });
+        console.log(`"handle change " ${value}`);
+        this.setState({});
     };
 
 
@@ -65,23 +67,48 @@ class App extends Component {
 
 
     render() {
+        console.log("in App looking at prpss");
+        console.log(" props location .pathname "+ this.props.location.pathname);
+        console.log(" props history location state pathname is  "+ this.props.history.location.state);
+        console.log(this.props);
+        console.log(this.props.history);
+
+      //  let poiTypeVar ='all';
         // let testPosts =  api.getAll();
-        console.log("  location Pathname and history location");
+        console.log("  location Pathname and history location from App");
         console.log(this.props.location.pathname);
         console.log(" stop");
-        const {pathname} = this.props.history.location;
-        console.log(`${pathname}`);
+        console.log(this.props.history.location.state);
+
+
+     //   if( this.props.history.location.state === undefined) {
+     //       console.log("history state is undefined ");
+     //       poiTypeVar = this.state.poiType;
+     //   } else{
+     //       let {testa} = this.props.history.location.state;
+     //       console.log("history state is not undefined ");
+     //       console.log(`${testa}`);
+     //       poiTypeVar = `${testa}`;
+     //       let {prevmenu} = this.props.history.location.state;
+     //       console.log(`${prevmenu}`);
+
+     //   };
+     //   console.log(`"poi typr var = " + ${poiTypeVar}`)
+     //  const {prevmenu} = this.props.history.location.state;
+    //    const {testa} =    this.props.history.location.state;
+      //  console.log(`${pathname} " current pathname"`);
         console.log("in app js - one");
-        //    const {testa} = this.props.location.state;
-        //    ({testa}) ? (
-        //       console.log("what the poi Type prop " + this.props.location.state.testa)
-        //   ):(
-        //       console.log("what the poi Type prop not exist ")
-        //   );
-        //   console.log("what the poi Type prop " + this.props.location.state.testa);
+          //  const {testa} = this.props.history.location.state;
+  //          ({testa}) ? (
+  //             console.log("what the poi Type prop " + this.props.history.location.state.testa)
+  //         ):(
+  //             console.log("what the poi Type prop not exist ")
+  //         );
+        //   console.log(`"what the prev menu prop " + ${prevmenu}`);
         let testPosts = _.sortBy(api.getAll(), post => -post.upvotes);
         let contacts = api.getAllContacts();
-        let points2 = api.getAllPoints3(this.state.poiType);
+       let points2 = api.getAllPoints3(this.state.poiType);
+      //  let points2 = api.getAllPoints3(`${poiTypeVar}`);
         //   points2.map(c => {
         //       console.log(c.name +" haha");
         //   });
@@ -122,7 +149,7 @@ class App extends Component {
             <AuthButton/>
             <Header noPoints={sortedPoints.length} />
             <FilterControls onUserInput={this.handleChange}/>
-            <PointList points={sortedPoints} deleteHandler={this.deletePoint}  upvoteHandler={this.incrementUpvote} poiType={this.state.poiType}/>
+            <PointList points={sortedPoints} deleteHandler={this.deletePoint}  upvoteHandler={this.incrementUpvote} poiType={this.state.poiType} />
             <div className="row">
             <div className="col-md-6 offset-3">
             <h1><a href="/">Point of Interest News</a></h1>

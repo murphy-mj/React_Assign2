@@ -5,6 +5,7 @@ import PointPublic from "../components/poiPublic/";
 import PointPrivate from "../components/poiPrivate/";
 import NewsForm from "../components/newsForm/";
 import NewsList from "../components/newsList/";
+import fakeAuth from "./fakeAuth";
 
 const PointPage = props => {
     const { id } = props.match.params;
@@ -23,19 +24,21 @@ const PointPage = props => {
     //  {!props.history.location.pathname.endsWith("/privates") && (
     //               <Link className="btn btn-primary active" to={`/point/${id}/privates`}> See Private Data </Link>
     //           )}
-
+    if( props.history.location.state = "undefined") {
+        console.log("In point apgrhistory state is un defined ");
+    };
 
     return (
         <Fragment>
         {point ? (
            <Fragment>
-           <PointPublic point={point}/>
+           <PointPublic point={point} prevmenu={props.history.location.pathname}/>
            <NewsList posts={point.comments} point={point}/>
            {!props.history.location.pathname.endsWith("/private") && (
                    <Link  to={`/point/${id}/private`}> See Private Data </Link>
            )}
           <Route path={`/point/:id/private`}
-              render={ (props) => <PointPrivate point={point} /> } />
+              render={ (props) => <PointPrivate point={point} prevmenu={props.history.location.pathname}/> } />
            </Fragment>
         ) : (
            <Fragment>

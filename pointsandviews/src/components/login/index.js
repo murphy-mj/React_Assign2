@@ -47,7 +47,7 @@ class Login extends Component {
 
         return (
         <Fragment>
-        <Link to="/app"><button onClick={this.login}> Public</button></Link>
+        <Link to="/app"><button onClick={this.login}> AdminControl</button></Link>
         <Link to="/app"> <button onClick={this.condt}>Admin</button></Link>
          </Fragment>
         );

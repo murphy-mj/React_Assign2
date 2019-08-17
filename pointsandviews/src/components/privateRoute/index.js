@@ -24,7 +24,7 @@ class PrivateRoute extends Component {
         render={props => {
             // console.log(props);
             return (fakeAuth.isAuthenticated === true ) ? (
-                <Component {...props} point={api.getPoint(props.match.params.id)} />
+                <Component {...props} point={api.getPoint(props.match.params.id)} prevmenu={this.props.location.pathname} />
         ) : (
             <Redirect
             to={{

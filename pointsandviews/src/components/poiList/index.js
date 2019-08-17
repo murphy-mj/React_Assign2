@@ -18,14 +18,16 @@ class PointList extends Component {
         if(fakeAuth.isAdmin === true) {
             console.log("im admin  is true");
         const  pointCards1 = this.props.points.map(c => (
-                    <PointView key={c.cursor} point={c} deleteHandler={this.props.deleteHandler}  upvoteHandler={this.props.upvoteHandler} poiType={this.props.poiType}/>
+                    <PointView key={c.cursor} point={c}   upvoteHandler={this.props.upvoteHandler} poiType={this.props.poiType}/>
         ));
             pointCards = pointCards1;
         };
         if(fakeAuth.isAdmin === false) {
             console.log("im admin  is false, and poiType is " + this.props.poiType);
         const  pointCards2 = this.props.points.map(c => (
-                    <Point key={c.cursor} point={c} deleteHandler={this.props.deleteHandler} upvoteHandler={this.props.upvoteHandler} poiType={this.props.poiType} />
+                    <Point key={c.cursor} point={c} deleteHandler={this.props.deleteHandler}
+                      editHandler={this.props.editHandler}
+                      upvoteHandler={this.props.upvoteHandler} poiType={this.props.poiType} />
         ));
             pointCards = pointCards2;
         };

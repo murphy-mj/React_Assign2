@@ -35,9 +35,17 @@ class Login extends Component {
     };
 
     render() {
-        const { redirectToReferrer } = this.state;
-        const { admin } = this.state;
-        const { from } = this.props.location.state || { from: { pathname: "/" } };
+        let redirectToReferrer = null;
+        let admin = null;
+        let from = null;
+
+        if(this.state === undefined) {
+
+        } else {
+            redirectToReferrer = this.state.redirectToReferrer;
+            admin = this.state.admin;
+          //  from = this.props.location.state || {from: {pathname: "/"}};
+        };
       //  if (redirectToReferrer === true && admin === false) {
       //      return <Redirect to={from}/>;
       //  }
@@ -50,8 +58,7 @@ class Login extends Component {
         <Link to="/app"><button onClick={this.login}> AdminControl</button></Link>
         <Link to="/app"> <button onClick={this.condt}>Admin</button></Link>
          </Fragment>
-        );
-    }
+        )
+    };
 }
-
 export default Login;

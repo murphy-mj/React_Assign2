@@ -23,14 +23,15 @@ class Point extends Component {
 
     static propTypes = {
         lat: PropTypes.number,
-        long: PropTypes.string
+        long: PropTypes.number,
+        name:PropTypes.string
     }
 
 
     state = {
         status: "",
         name: this.props.point.name,
-        lat: this.props.point.coordinates.geo.lat,
+        lat:  this.props.point.coordinates.geo.lat,
         long: this.props.point.coordinates.geo.long,
         cursor: this.props.point.cursor,
         upvotes:this.props.point.upvotes,
@@ -59,16 +60,18 @@ class Point extends Component {
 
     handleSave = e => {
         e.preventDefault();
-        let updatedName = this.state.name.trim();
-        let updatedLat = this.state.lat.trim();
-        let updatedLong = this.state.long.trim();
+        let updatedName = this.state.name;
+        let updatedLat = this.state.lat;
+        let updatedLong = this.state.long;
      //   let updatedCursor = this.state.Cursor.trim();
         if (!updatedLong || !updatedLat || !updatedName ) {
             return;
         }
         let { name,lat,long} = this.state;
         this.setState({ status: "", previousDetails: { name,lat,long} });
-        api.updatePoint(this.state.previousDetails.cursor, updatedName, updatedLat,updatedLong);
+        console.log(`"in handle save  tis state "${this.state.cursor}, ${updatedName}, ${updatedLat},${updatedLong}`);
+        this.props.editHandler(this.state.cursor, updatedName, updatedLat,updatedLong);
+       // api.updatePoint(this.state.previousDetails.cursor, updatedName, updatedLat,updatedLong);
     };
 
     handleNameChange = e => this.setState({ name: e.target.value });
@@ -95,8 +98,8 @@ class Point extends Component {
         if (this.state.status === "edit") {
             cardColor = "bg-primary";
             activeButtons = buttons.edit;
-            leftButtonHandler = this.handleCancel;
-            rightButtonHandler = this.handleSave;
+            leftButtonHandler = this.handleSave;
+            rightButtonHandler = this.handleCancel;
         } else if (this.state.status === 'del' ) {
             cardColor = "bg-warning";
             activeButtons = buttons.delete;
@@ -176,6 +179,8 @@ class Point extends Component {
         <FontAwesomeIcon icon={["fas", "phone"]} />
         <span> {this.props.point.coordinates.geo.long} </span>
         </p>
+
+
         <Link to={{
             pathname:`point/${this.props.point.cursor}`,
                 state:{

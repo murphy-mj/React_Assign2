@@ -602,11 +602,21 @@ class StubAPI {
     }
 
     updatePoint(key,name,lat, long) {
-        let index = _.findIndex(this.points, point => point.cursor === key);
+        let index1 = this.getIndex(key);
+        console.log("inside updatepoint ");
+        console.log({index1});
+        console.log(`"lat and long "${key}${lat}${long}${name}`);
+
+        let index = _.findIndex(this.points[index1].pois, point => point.cursor == key);
+        console.log({index});
         if (index !== -1) {
-            this.points[index].name = name;
-            this.points[index].coordinates.geo.lat = lat;
-            this.points[index].coordinates.geo.long = long;
+
+            this.points[index1].pois[index].name = name;
+         //   this.points[index1].pois[index].safeName = name;
+            this.points[index1].pois[index].coordinates.geo.lat = lat;
+            this.points[index1].pois[index].coordinates.geo.long = long;
+            console.log(this.points[index1].pois[index]);
+            console.log(this.points[index1].pois[index].name);
             return true;
         }
         return false;

@@ -10,6 +10,8 @@ import _ from 'lodash';
 import request from "superagent";
 import NewsForm from "./components/newsForm/";
 import AuthButton from "./components/AuthButton/";
+import fakeAuth from "./components/fakeAuth";
+import Login from "./components/login/";
 
 class App extends Component {
 
@@ -58,11 +60,10 @@ class App extends Component {
         this.setState({});
     };
 
-    editPoint = (comment, promoter, cursor) => {
-        api.addComment(comment, promoter, cursor);
+    editPoint = (key,name,lat, long) => {
+        api.updatePoint(key,name,lat, long);
         this.setState({});
     };
-
 
 
 
@@ -144,21 +145,29 @@ class App extends Component {
 
         // commentHandler={this.requestComment}
         //    console.log("admin ? " +this.props.location);
-        return (
+        return fakeAuth.isAuthenticated ? (
             <Fragment>
             <AuthButton/>
             <Header noPoints={sortedPoints.length} />
             <FilterControls onUserInput={this.handleChange}/>
-            <PointList points={sortedPoints} deleteHandler={this.deletePoint}  upvoteHandler={this.incrementUpvote} poiType={this.state.poiType} />
+            <PointList points={sortedPoints}
+            deleteHandler={this.deletePoint}
+            editHandler={this.editPoint}
+            upvoteHandler={this.incrementUpvote}
+
+            poiType={this.state.poiType} />
             <div className="row">
             <div className="col-md-6 offset-3">
             <h1><a href="/">Point of Interest News</a></h1>
         </div>
         </div>
-
         </Fragment>
-    );
-    }
+    ) : (
+        <Fragment>
+        <AuthButton/>
+        <Login/>
+        </Fragment>
+        );
+    };
 }
-
 export default App;

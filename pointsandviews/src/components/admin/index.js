@@ -1,17 +1,17 @@
 import React, { Component,Fragment } from "react";
-import Header from "./components/header/";
-import PointList from "./components/poiList/";
-import FilterControls from "./components/filterControls/";
-import PointItemList from "./components/pointItemList/";
-import Form from "./components/pointForm/";
-import api from './dataStore/stubAPI';
-import "../node_modules/bootstrap/dist/css/bootstrap.css";
+import Header from "../header";
+import PointList from "../poiList/";
+import FilterControls from "../filterControls/";
+import PointItemList from "..//pointItemList/";
+import Form from "../pointForm/";
+import api from '../../dataStore/stubAPI';
+import "../../../node_modules/bootstrap/dist/css/bootstrap.css";
 import _ from 'lodash';
 import request from "superagent";
-import NewsForm from "./components/newsForm/";
-import AuthButton from "./components/AuthButton/";
+import NewsForm from "../newsForm/";
+import AuthButton from "../AuthButton/";
 
-class App extends Component {
+class Admin extends Component {
 
     state = { search: "", poiType: "all" };
 
@@ -40,8 +40,9 @@ class App extends Component {
         this.setState({});
     };
 
+
     deletePoint = (key) => {
-        console.log("in del in app, my cursor is "+key);
+        console.log("in del in Admin, my cursor is "+key);
         api.deletePoint(key);
         this.setState({});
     };
@@ -51,10 +52,12 @@ class App extends Component {
         this.setState({});
     };
 
-    incrementUpvote2 = (id) => {
-        api.upvote(id) ;
+    deleteComment = (cursor, key) => {
+        console.log("in del in admin, my cursor is "+key);
+        api.deleteComment(cursor, key);
         this.setState({});
     };
+
 
     editPoint = (comment, promoter, cursor) => {
         api.addComment(comment, promoter, cursor);
@@ -66,19 +69,7 @@ class App extends Component {
 
     render() {
         // let testPosts =  api.getAll();
-        console.log("  location Pathname and history location");
-        console.log(this.props.location.pathname);
-        console.log(" stop");
-        const {pathname} = this.props.history.location;
-        console.log(`${pathname}`);
-        console.log("in app js - one");
-        //    const {testa} = this.props.location.state;
-        //    ({testa}) ? (
-        //       console.log("what the poi Type prop " + this.props.location.state.testa)
-        //   ):(
-        //       console.log("what the poi Type prop not exist ")
-        //   );
-        //   console.log("what the poi Type prop " + this.props.location.state.testa);
+        console.log("in admin js - one")
         let testPosts = _.sortBy(api.getAll(), post => -post.upvotes);
         let contacts = api.getAllContacts();
         let points2 = api.getAllPoints3(this.state.poiType);
@@ -86,14 +77,13 @@ class App extends Component {
         //       console.log(c.name +" haha");
         //   });
 
-        console.log("back in app js");
+        console.log("back in admin js");
         console.log(points2.length + " length of p2");
-        console.log("render in Apps");
+        console.log("render in Admin");
         //  console.log(api.getAllPoints1(this.state.poiType));
         //  points2[0].map(c => {
         //      console.log(c.cursor);
         //  });
-        console.log("render in Apps2");
 
         let filteredPoints = points2.filter(c => {
             //const name = `${c[0].name} `;
@@ -110,28 +100,27 @@ class App extends Component {
         let sortedPoints = _.sortBy(filteredPoints, c => c.name);
 
 
-        console.log("render in Apps sorted Points ");
+        console.log("render in Apdmin sorted Points ");
         // sortedPoints.map(c => {
         //     console.log(c.cursor);
         // });
 
         // commentHandler={this.requestComment}
-        //    console.log("admin ? " +this.props.location);
+        console.log("admin ? " +this.props.location);
         return (
             <Fragment>
-            <AuthButton/>
-            <Header noPoints={sortedPoints.length} />
-            <FilterControls onUserInput={this.handleChange}/>
-            <PointList points={sortedPoints} deleteHandler={this.deletePoint}  upvoteHandler={this.incrementUpvote} poiType={this.state.poiType}/>
-            <div className="row">
+           <AuthButton/>
+           <Header noPoints={sortedPoints.length} />
+           <FilterControls onUserInput={this.handleChange}/>
+           <PointList points={sortedPoints} deleteHandler={this.deletePoint}  upvoteHandler={this.incrementUpvote} />
+           <div className="row">
             <div className="col-md-6 offset-3">
-            <h1><a href="/">Point of Interest News</a></h1>
+            <h1><a href="/">Admin working page</a></h1>
+           </div>
         </div>
-        </div>
-
         </Fragment>
     );
     }
 }
 
-export default App;
+export default Admin;

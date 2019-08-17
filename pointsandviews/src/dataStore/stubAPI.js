@@ -457,6 +457,8 @@ class StubAPI {
         this.contacts = contacts;
     }
 
+
+// remove
     initializePoints(pointsIn) {
         console.log("inside initilaizeP");
 // adding additional properties,upvotes and comments to the initial data
@@ -467,13 +469,14 @@ class StubAPI {
         console.log(this.points[1].upvotes);
     }
 
-// used in  app.js
-    initializePoints3(pointsIn) {
+/* used in  index.js file, here we take in array of points, and as we go through each point in the Array,
+   we add 2 additional properties to each point, an array to hold comments and an upvote property, with a default value of 1. */
 
+    initializePoints3(pointsIn) {
         let items = pointsIn.map((point) =>({...point,['comments']:[],['upvotes']:1}));
         this.points = items;
 
-        console.log("inside initilaizeP categ");
+        console.log("display the names of the different areaa");
         this.category.map((categ) =>(
             console.log(categ)
         ));

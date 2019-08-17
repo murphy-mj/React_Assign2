@@ -7,13 +7,16 @@ import { BrowserRouter, Route, Redirect, Switch } from "react-router-dom";
 import request from "superagent";
 import api from "./dataStore/stubAPI";
 import "../node_modules/bootstrap/dist/css/bootstrap.css";
-import App from "./App";
 import Admin from "./components/admin/";
 import PointPage from "./components/pointPage";
 import NewsForm from "./components/newsForm/";
 import Login from "./components/login/";
 import PrivateRoute from "./components/privateRoute/";
 import PoiPrivate from "./components/poiPrivate/";
+//import jsonResponse from './dataStore/all.js';
+// if (jsonResponse) {
+//  let results = jsonResponse;
+//JSON.parse(res.text);
 
 class Router extends Component {
     componentDidMount() {
@@ -31,8 +34,9 @@ class Router extends Component {
             } else {
                 console.log("problem with cop did mount  ");
                 console.log(error);
-            }
-        });
+
+           }
+     });
     }
 
 
@@ -41,6 +45,8 @@ class Router extends Component {
         // console.log("props ?  "+ this.props.location);
 
         // console.log("SCR Index admin?  "+ this.props.location.state.pathname);
+       //  console.log("lest see prive Rourte param id");
+       //  console.log(this.props.match.params.id);
         return (
             <BrowserRouter>
             <div className="jumbotron">
@@ -50,7 +56,7 @@ class Router extends Component {
         <Route exact path="/point/:id/comment" component={NewsForm}/>
         <Route exact path="/" component={Login} />
         <Route exact path="/app" component={App} />
-        //   <PrivateRoute exact path="/point/:id/private" component={PoiPrivate} />
+        <PrivateRoute exact path="/point/:id/private" component={PoiPrivate}  />
         <Redirect from="*" to="/" />
             </Switch>
             </div>
@@ -58,13 +64,7 @@ class Router extends Component {
             </BrowserRouter>
     );
     }
+
 }
 
 ReactDOM.render(<Router />, document.getElementById("root"));
-
-//ReactDOM.render(<App />, document.getElementById('root'));
-
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: https://bit.ly/CRA-PWA
-//serviceWorker.unregister();

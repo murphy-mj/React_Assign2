@@ -11,6 +11,7 @@ const fakeAuth = {
         setTimeout(cb, 100); // fake async
     },
     authenticateAdmin(username, cb) {
+        console.log(" in auth Admin");
         this.isAdmin = true;
         setTimeout(cb, 100); // fake async
     },

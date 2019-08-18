@@ -493,9 +493,6 @@ class StubAPI {
    points1 is an Array of
 
    */
-
-
-
     initializePoints3(pointsIn) {
         let items = pointsIn.map((point) =>({...point,['comments']:[],['upvotes']:1}));
         this.points = items;

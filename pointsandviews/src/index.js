@@ -38,6 +38,8 @@ class Router extends Component {
       let results = jsonResponse;
       api.initializePoints3(results);
       this.setState({});
+      console.log("display a point to show additional properties")
+      console.log(api.points1[0].pois[0]);
 
     }
 

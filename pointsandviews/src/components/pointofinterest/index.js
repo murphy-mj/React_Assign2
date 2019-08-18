@@ -3,8 +3,6 @@ import "./point.css";
 import "../../fontawesome";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import buttons from "../../config/buttonsConfig";
-import NewsForm from "../newsForm";
-import api from '../../dataStore/stubAPI'
 import PropTypes from "prop-types";
 import { BrowserRouter, Route, Redirect, Switch, Link, withRouter} from "react-router-dom";
 
@@ -15,10 +13,6 @@ class Point extends Component {
         this.props.upvoteHandler(this.props.point.cursor);
 };
 
-  //  handleComment = () => {
-  //      console.log("handleComment   ");
-  //      this.props.commentHandler(this.props.point.cursor);
-  //  }
 
 
     static propTypes = {
@@ -63,21 +57,17 @@ class Point extends Component {
         let updatedName = this.state.name;
         let updatedLat = this.state.lat;
         let updatedLong = this.state.long;
-     //   let updatedCursor = this.state.Cursor.trim();
         if (!updatedLong || !updatedLat || !updatedName ) {
             return;
         }
         let { name,lat,long} = this.state;
         this.setState({ status: "", previousDetails: { name,lat,long} });
-        console.log(`"in handle save  tis state "${this.state.cursor}, ${updatedName}, ${updatedLat},${updatedLong}`);
         this.props.editHandler(this.state.cursor, updatedName, updatedLat,updatedLong);
-       // api.updatePoint(this.state.previousDetails.cursor, updatedName, updatedLat,updatedLong);
     };
 
     handleNameChange = e => this.setState({ name: e.target.value });
     handleLatChange = e => this.setState({ lat: e.target.value });
     handleLongChange = e => this.setState({ long: e.target.value });
-  // handleCursorChange = e => this.setState({ cursor : e.target.value });
     handleDelete = () =>  this.setState({ status : 'del'} );
 
     handleConfirm = (e) => {
@@ -88,7 +78,6 @@ class Point extends Component {
 
 
     render() {
-      //  console.log("props " + this.props  );
         let activeButtons = buttons.normal;
         let leftButtonHandler = this.handleEdit;
         let rightButtonHandler = this.handleDelete;
@@ -119,9 +108,7 @@ class Point extends Component {
        <div className="card">
        <div className="card-body">
             <h5 className="card-title ">
-            {`${this.props.point.name} ${
-                this.props.point.safeName
-                }`}
+            {`${this.props.point.name}`}
             </h5>
 
         {this.state.status === "edit" ? (
@@ -161,23 +148,20 @@ class Point extends Component {
         ):(
         <Fragment>
         <span className=" ptr" onClick={this.handleVote}>
-            <FontAwesomeIcon icon={["fas", "arrow-circle-left"]} size="2x" />
-            {` ${this.props.point.upvotes}`}
+            <FontAwesomeIcon icon={["fas", "arrow-circle-left"]} size="1x" />
+            {`Popular Vote : ${this.props.point.upvotes}`}
         </span>
 
         <p>
-        <FontAwesomeIcon icon={["fas", "envelope"]} />
-        <span> {this.props.point.name}</span>
+        <span> Name :{this.props.point.safeName}</span>
         </p>
 
         <p>
-        <FontAwesomeIcon icon={["fas", "phone"]} />
-        <span> {this.props.point.coordinates.geo.lat} </span>
+        <span> Cordinate latitude :{this.props.point.coordinates.geo.lat} </span>
         </p>
 
         <p>
-        <FontAwesomeIcon icon={["fas", "phone"]} />
-        <span> {this.props.point.coordinates.geo.long} </span>
+        <span> Cordinate longitude  {this.props.point.coordinates.geo.long} </span>
         </p>
 
 
@@ -190,7 +174,7 @@ class Point extends Component {
         }}>
         <p>
         <FontAwesomeIcon icon={["fas", "phone"]} />
-        <span> {this.props.point.cursor} </span>
+        <span>Details </span>
         </p>
         </Link>
 
@@ -202,8 +186,8 @@ class Point extends Component {
             }
         }}>
             <p>
-            <span>{`point/${this.props.point.cursor}/comment`}</span>
             <FontAwesomeIcon icon={["fas", "phone"]} />
+            <span>Comment</span>
             </p>
         </Link>
 

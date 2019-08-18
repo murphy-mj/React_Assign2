@@ -14,7 +14,8 @@ import fakeAuth from "./components/fakeAuth";
 import Login from "./components/login/";
 
 class App extends Component {
-
+    // poiType is the area selected by the user, defaults to all
+    // search is the varaiable that hold data that the user wished to search by
     state = { search: "", poiType: "all" };
 
 
@@ -55,10 +56,10 @@ class App extends Component {
         this.setState({});
     };
 
-    incrementUpvote2 = (id) => {
-        api.upvote(id) ;
-        this.setState({});
-    };
+ //   incrementUpvote2 = (id) => {
+ //       api.upvote(id) ;
+ //       this.setState({});
+ //   };
 
     editPoint = (key,name,lat, long) => {
         api.updatePoint(key,name,lat, long);
@@ -68,7 +69,7 @@ class App extends Component {
 
 
     render() {
-        console.log("in App looking at prpss");
+        console.log("in App ");
         console.log(" props location .pathname "+ this.props.location.pathname);
         console.log(" props history location state pathname is  "+ this.props.history.location.state);
         console.log(this.props);
@@ -98,7 +99,7 @@ class App extends Component {
      //  const {prevmenu} = this.props.history.location.state;
     //    const {testa} =    this.props.history.location.state;
       //  console.log(`${pathname} " current pathname"`);
-        console.log("in app js - one");
+//        console.log("in app js - one");
           //  const {testa} = this.props.history.location.state;
   //          ({testa}) ? (
   //             console.log("what the poi Type prop " + this.props.history.location.state.testa)
@@ -106,45 +107,23 @@ class App extends Component {
   //             console.log("what the poi Type prop not exist ")
   //         );
         //   console.log(`"what the prev menu prop " + ${prevmenu}`);
-        let testPosts = _.sortBy(api.getAll(), post => -post.upvotes);
-        let contacts = api.getAllContacts();
-       let points2 = api.getAllPoints3(this.state.poiType);
-      //  let points2 = api.getAllPoints3(`${poiTypeVar}`);
-        //   points2.map(c => {
-        //       console.log(c.name +" haha");
-        //   });
 
-        console.log("back in app js");
-        console.log(points2.length + " length of p2");
-        console.log("render in Apps");
-        //  console.log(api.getAllPoints1(this.state.poiType));
-        //  points2[0].map(c => {
-        //      console.log(c.cursor);
-        //  });
-        console.log("render in Apps2");
+        //let testPosts = _.sortBy(api.getAll(), post => -post.upvotes);
 
+
+        // rather than returning all points, we reduce the number by generating an array of points
+        // based on the area Selected by the user.
+        let points2 = api.getAllPoints3(this.state.poiType);
+
+        // the user can reduce the number of points, by filtering by name
         let filteredPoints = points2.filter(c => {
-            //const name = `${c[0].name} `;
             const name = `${c.name} `;
-            // console.log(c[0].name)
             return name.toLowerCase().search(this.state.search.toLowerCase()) !== -1;
         });
 
-        // filteredPoints =
-        //     this.state.poiType === "all"
-        //         ? filteredPoints
-        //         : filteredPoints.filter(c => c.poiType === this.state.poiType);
-
+        // the filtered points are sorted, and then these are use in the display
         let sortedPoints = _.sortBy(filteredPoints, c => c.name);
 
-
-        console.log("render in Apps sorted Points ");
-        // sortedPoints.map(c => {
-        //     console.log(c.cursor);
-        // });
-
-        // commentHandler={this.requestComment}
-        //    console.log("admin ? " +this.props.location);
         return fakeAuth.isAuthenticated ? (
             <Fragment>
             <AuthButton/>

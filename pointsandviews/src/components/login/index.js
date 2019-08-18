@@ -12,27 +12,32 @@ import fakeAuth from "../fakeAuth";
 import PrivateRoute from "../privateRoute";
 
 
-
-
 class Login extends Component {
+
     state = {
         redirectToReferrer: false,
         username: null,
         admin: false
     };
 
-    login = () => {
+// the genal admin user, just set the Authentication to true, as they have restricted access
+    loginAdmin = () => {
         fakeAuth.authenticate(this.state.username, () => {
             this.setState({ redirectToReferrer: true });
         });
     };
-    condt = () => {
+
+  // senior login sets the fake Authentication's is Admin user and is Authenticated to true
+    loginSenior = () => {
         fakeAuth.authenticateAdmin(this.state.username, () => {
         });
+
         fakeAuth.authenticate(this.state.username, () => {
             this.setState({ redirectToReferrer: true });
         });
     };
+
+
 
     render() {
         let redirectToReferrer = null;
@@ -44,19 +49,15 @@ class Login extends Component {
         } else {
             redirectToReferrer = this.state.redirectToReferrer;
             admin = this.state.admin;
-          //  from = this.props.location.state || {from: {pathname: "/"}};
         };
-      //  if (redirectToReferrer === true && admin === false) {
-      //      return <Redirect to={from}/>;
-      //  }
-      //  if (redirectToReferrer === true && admin === true) {
-      //      return <PrivateRoute to={from}/>;
-      //  }
+
 
         return (
         <Fragment>
-        <Link to="/app"><button onClick={this.login}> AdminControl</button></Link>
-        <Link to="/app"> <button onClick={this.condt}>Admin</button></Link>
+        <div className="login-body">
+        <Link to="/app"><button className = "login-control" onClick={this.loginSenior}>SeniorAdmin</button></Link>
+        <Link to="/app"> <button className = "login-control" onClick={this.loginAdmin}>GeneralAdmin</button></Link>
+        </div>
          </Fragment>
         )
     };

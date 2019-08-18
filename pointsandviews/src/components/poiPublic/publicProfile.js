@@ -7,7 +7,7 @@ export default ({ point }) => {
     const address = capitalize(
         `${point.coordinates.geo.long}, ${point.coordinates.geo.lat}`
     );
-
+    console.log("THIS COMPONENT publicProfile Not USED");
     return (
         <Fragment>
         <h4>

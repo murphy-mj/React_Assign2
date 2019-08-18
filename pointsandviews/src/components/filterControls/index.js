@@ -21,21 +21,22 @@ export default class FilterControls extends Component {
     };
 
     render() {
-        console.log("In filter control  ")
+
         return (
             <div className="container-fluid">
             <div className="row bg-warning">
             <div className="col-md-12">
             <h4>
-            <span>Filter </span>
+
+            <span>Filter by Name </span>
             <input type="text" placeholder="Type Search"  onChange={this.handleTextChange}/>
-            <span> Select Point of Interest Loction: </span>
-        <select id="poiType" onChange={this.handlePoiTypeChange}>
+            <span> Select based on  Loction: </span>
+            <select id="poiType" onChange={this.handlePoiTypeChange}>
             {api.GetAllCategories().map(s => (
                 <option value={s}>{s}</option>
             ))}
-
             </select>
+
             </h4>
             </div>
             </div>

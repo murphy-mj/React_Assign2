@@ -22,13 +22,14 @@ class Admin extends Component {
         this.setState({});
     };
 
-
+// add comment on a Point
     requestComment = (comment,promoter,cursor) => {
-        console.log(" request comment "+comment+" "+cursor);
         api.addComment(comment,promoter,cursor);
 
     }
 
+    // has the change in the Filter, based on area or name
+    // then refresh
     handleChange = (type, value) => {
         type === "name" ? this.setState({ search: value }) : this.setState({ poiType: value });
     };
@@ -58,7 +59,7 @@ class Admin extends Component {
         this.setState({});
     };
 
-
+ //
     editPoint = (comment, promoter, cursor) => {
         api.addComment(comment, promoter, cursor);
         this.setState({});

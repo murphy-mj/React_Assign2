@@ -92,7 +92,7 @@ class StubAPI {
         this.points =[];
         this.points1 =[];
         this.pointsP = [];
-        this.contacts = [];
+   //     this.contacts = [];
         this.points2 =[];
         this.pointsComments = [];
         this.category = ["all"];
@@ -205,51 +205,55 @@ class StubAPI {
         return this.points1;
     }
 
+
+    /* this is used in the Filter Component to list the areas that the points are categorized by
+       NORTH WEST, SOUTH etc
+     */
     GetAllCategories(){
         return this.category;
     }
 
-    getAllContacts() {
-        return this.contacts;
-    }
+ //   getAllContacts() {
+//        return this.contacts;
+//    }
 
 
 
-    add(title, author, link,cursor) {
-        let id = 1;
-        let last = _.last(this.posts);
-        if (last) {
-            id = last.id + 1;
-        }
-        let len = this.posts.length;
-        let newLen = this.posts.push({
-            id,
-            title,
-            author,
-            link,
-            comments: [],
-            cursor,
-            upvotes: 0
-        });
-        return newLen > len;
-    }
+ //   add(title, author, link,cursor) {
+ //       let id = 1;
+ //       let last = _.last(this.posts);
+ //       if (last) {
+//            id = last.id + 1;
+//        }
+//        let len = this.posts.length;
+//        let newLen = this.posts.push({
+//            id,
+//            title,
+//            author,
+//            link,
+//            comments: [],
+//            cursor,
+//            upvotes: 0
+//        });
+//        return newLen > len;
+//    }
 
-    addPointPost(title, promoter,cursor) {
-        let id = 1;
-        let last = _.last(this.postPoints);
-        if (last) {
-            id = last.id + 1;
-        }
-        let len = this.postPoints.length;
-        let newLen = this.postPoints.push({
-            id,
-            title,
-            promoter,
-            cursor,
-            upvotes: 0
-        });
-        return newLen > len;
-    }
+ //   addPointPost(title, promoter,cursor) {
+ //       let id = 1;
+ //       let last = _.last(this.postPoints);
+ //       if (last) {
+ //           id = last.id + 1;
+ //       }
+ //       let len = this.postPoints.length;
+ //       let newLen = this.postPoints.push({
+ //           id,
+ //           title,
+ //  /         promoter,
+ //           cursor,
+ //           upvotes: 0
+ //       });
+ //       return newLen > len;
+ //   }
 
 
     addComment(comment, promoter, cursor) {
@@ -270,9 +274,9 @@ class StubAPI {
 
 
 
-    addContact(){
-
-    }
+//    addContact(){
+//
+//    }
 
     upvote(id) {
         let index = _.findIndex(this.posts, post => post.id === id);
@@ -293,15 +297,15 @@ class StubAPI {
 }
 
 
-// this is used in app.js
+/* this is used in app.js, to increment the vote for the point
+ as the points are stored in different arrays based on areas (poiType) indexA is the index of the Array
+ once we have the array, we can serach that arry to find the location within  the arayy of the point, index.
+ as points1 array hold all the points,and these points have the extented prperties, this is used.
+ */
     upvote3(id) {
         let indexA = this.getIndex(id);
-        console.log("upvot3 ");
-      //  let index = _.findIndex(this.pointsP, point => point.cursor == id);
         let indexB = _.findIndex(this.points1[indexA].pois, point => point.cursor == id);
-        console.log("upvot3 "+this.points1[indexA].pois[indexB].upvotes);
         if (indexB !== -1) {
-        //    this.pointsP[index].upvotes += 1;
             this.points1[indexA].pois[indexB].upvotes += 1;
             return true;
         }
@@ -321,7 +325,7 @@ class StubAPI {
         return false;
     }
 
-    //this is used, returns the index of the Array that holds the point
+    /*this is used, returns the index of the Array that holds the point, p, which is an id(cursor) */
 
     getIndex(p) {
         let index = -1;
@@ -338,6 +342,8 @@ class StubAPI {
     }
 
 
+
+
     getPost(id) {
         let index = _.findIndex(this.posts, post => post.id === id);
         let result = index !== -1 ? this.posts[index] : null;
@@ -345,28 +351,29 @@ class StubAPI {
     }
 
 
-    // this is used
+    /* this is used to return the point object based on the point id(cursor)
+     as the points are stored in different arrays based on areas (poiType) indexA is the index of the Array
+     once we have the array, we can serach that arry to find the location within  the arayy of the point, index.
+     as long as the id if found within the array, we can return the point object
+     points1 is the array of all points which have extended properties */
+
     getPoint(id) {
-        console.log("get Points "+ id);
-      // this.points.map((point,index) => console.log(point.cursor));
         let indexA = this.getIndex(id);
         let index = _.findIndex(this.points1[indexA].pois, point => point.cursor == id);
-        console.log("post get Points, point index"+ index)
         let result = index !== -1 ? this.points1[indexA].pois[index] : null;
-       console.log("inside getPoint result name is "+ result.name)
         return result;
     }
 
-    getPointOriginal(id) {
-        console.log("get Points"+ id);
-        this.points.map((point,index) => console.log(point.cursor));
-
-        let index = _.findIndex(this.points, point => point.cursor == id);
-        console.log("post get Points, point index"+ index)
-        let result = index !== -1 ? this.points[index] : null;
-        // console.log("inside getPoint index is "+ index)
-        return result;
-    }
+ //   getPointOriginal(id) {
+ //       console.log("get Points"+ id);
+ //       this.points.map((point,index) => console.log(point.cursor));
+//
+//        let index = _.findIndex(this.points, point => point.cursor == id);
+//        console.log("post get Points, point index"+ index)
+//        let result = index !== -1 ? this.points[index] : null;
+//        // console.log("inside getPoint index is "+ index)
+//        return result;
+//    }
 
 
 
@@ -378,27 +385,27 @@ class StubAPI {
 
 
 
-    getPoint2(id) {
-        console.log(this.points);
-        let index = _.findIndex(this.points, point => point.cursor == id);
-        let result = index !== -1 ? this.points[index] : null;
-        console.log("inside getPoint index is "+ index)
-        return result;
-    }
+//    getPoint2(id) {
+//        console.log(this.points);
+//        let index = _.findIndex(this.points, point => point.cursor == id);
+//        let result = index !== -1 ? this.points[index] : null;
+//        console.log("inside getPoint index is "+ index)
+//        return result;
+//    }
 
 
 
 
-    getContact(id){
-        let index = _.findIndex(
-            this.contacts,
-            contact => `${contact.phone}${contact.cell}` === id
-        );
-        if (index !== -1) {
-            return this.contacts[index];
-        }
-        return null;
-    }
+//    getContact(id){
+//        let index = _.findIndex(
+//            this.contacts,
+//            contact => `${contact.phone}${contact.cell}` === id
+//        );
+//        if (index !== -1) {
+//            return this.contacts[index];
+//        }
+//        return null;
+//    }
 
 
     getComments(id){
@@ -419,17 +426,24 @@ class StubAPI {
 
 
 
-    deleteContact(k) {
-        let elements = _.remove(this.contacts, contact => contact.phone === k);
-        return elements;
-    }
+ //   deleteContact(k) {
+ //       let elements = _.remove(this.contacts, contact => contact.phone === k);
+ //       return elements;
+ //   }
+
+
+
 
     deleteComment(p,k) {
-
         let elements = _.remove(this.comments, comment => comment.id === k);
         return elements;
     }
 
+
+
+// points are stored in arrays based on the gerographical areas
+// wehen we are given the id of a point to remove, its necessay to locate the array that it is stored in.
+// rather than having the function too big, this implementation is done through getIndex(k)
 
     deletePoint(k) {
         let elements2 = {};
@@ -456,42 +470,47 @@ class StubAPI {
 
 
 
-    initializeContacts(contacts) {
-        this.contacts = contacts;
-    }
+ //   initializeContacts(contacts) {
+ //       this.contacts = contacts;
+ //   }
 
 
 // remove
-    initializePoints(pointsIn) {
-        console.log("inside initilaizeP");
+//    initializePoints(pointsIn) {
+//        console.log("inside initilaizeP");
 // adding additional properties,upvotes and comments to the initial data
-        let items = pointsIn.map((point) =>({...point,['comments']:[],['upvotes']:1}));
-        this.points = items;
-        console.log(this.points);
-        console.log(this.points[1].name);
-        console.log(this.points[1].upvotes);
-    }
+//        let items = pointsIn.map((point) =>({...point,['comments']:[],['upvotes']:1}));
+//        this.points = items;
+//        console.log(this.points);
+//        console.log(this.points[1].name);
+//        console.log(this.points[1].upvotes);
+//    }
 
 /* used in  index.js file, here we take in array of points, and as we go through each point in the Array,
-   we add 2 additional properties to each point, an array to hold comments and an upvote property, with a default value of 1. */
+   we add 2 additional properties to each point, an array to hold comments and an upvote property, with a default value of 1.
+   pointsIn this is the json data fron the API.
+   points array, holds all the points with additional properties
+   points1 is an Array of
+
+   */
+
+
 
     initializePoints3(pointsIn) {
         let items = pointsIn.map((point) =>({...point,['comments']:[],['upvotes']:1}));
         this.points = items;
+        //console.log("display the names of the different areaa");
+        //this.category.map((categ) =>(
+        //    console.log(categ)
+        //));
 
-        console.log("display the names of the different areaa");
-        this.category.map((categ) =>(
-            console.log(categ)
-        ));
-
-        console.log("inside initilaizeP categ points");
-        pointsIn.map((categ) =>(
-            console.log(categ.title)
-        ));
+        //console.log("inside initilaizeP categ points");
+       // pointsIn.map((categ) =>(
+       //     console.log(categ.title)
+       // ));
 
         let cat = [];
         pointsIn.map((categ) =>(
-            //   point.title));
         this.category.push(categ.title)
         ));
 
@@ -499,11 +518,6 @@ class StubAPI {
         this.points1.push(categ)
     ));
 
-
-
-        this.category.map((categ) =>(
-            console.log(categ + "is this title")
-        ));
 
         this.points2 = [];
         for (var i=0; i<this.points1.length; i++) {
@@ -513,30 +527,19 @@ class StubAPI {
                 this.points2.push(this.points1[i].pois[b])
             }
         }
-        // this.category = cat;
     }
+
+
 
  // used in App.js
     getAllPoints3(poiType) {
-
+                // returning an array of points based on the area selected by user (poiType)
                 if (poiType == "all") {
                     this.pointsP = [];
-
-                  //  for (var i=0; i<this.points1.length; i++) {
-                  //      for (var b = 0; b < this.points1[i].pois.length; b++) {
-                  //          this.pointsP.push(this.points1[i].pois[b])
-                  //      }
-                  //  }
-
                     for (var c = 0; c <this.points2.length; c++) {
                         this.pointsP.push(this.points2[c])
                     }
-
-
-
-
                 } else {
-
                     let index = -1;
                     for (var i = 0; i < this.points1.length; i++) {
                         console.log(this.points1[i].title +" points title "  + poiType);
@@ -554,21 +557,6 @@ class StubAPI {
                         }
                     }
                 }
-
-                //    this.points1.map(c => {
-                //        console.log(c.name +" haha2");
-                //    });
-
-                //  console.log(this.points1[0][0].cursor +" cursor");
-                // api.initializePoints(results[index].pois);
-                //   api.initializePoints2(results[0].pois);
-                // this.setState({});
-           // } else {
-           //     console.log(error);
-           //     console.log("issue with results");
-          //  }
-      // console.log(this.pointsP + "ret points one");
-
         return this.pointsP;
 }
 
@@ -581,25 +569,25 @@ class StubAPI {
 
 
 
-    initializePoints2(points) {
-        console.log("inside initilaizeP2");
-        //console.log(points);
-        let items = points.map((point,index) =>
-            (<PointItem key={index} point={point}/> ))
-        this.points2 = items;
+  //  initializePoints2(points) {
+  //      console.log("inside initilaizeP2");
+  //      //console.log(points);
+  //      let items = points.map((point,index) =>
+  //          (<PointItem key={index} point={point}/> ))
+  //      this.points2 = items;
+//
+ //   }
 
-    }
 
-
-    updateContact(key, email, phone) {
-        let index = _.findIndex(this.contacts, contact => contact.phone === key);
-        if (index !== -1) {
-            this.contacts[index].phone = phone;
-            this.contacts[index].email = email;
-            return true;
-        }
-        return false;
-    }
+ //  updateContact(key, email, phone) {
+ //       let index = _.findIndex(this.contacts, contact => contact.phone === key);
+ //       if (index !== -1) {
+ //           this.contacts[index].phone = phone;
+ //           this.contacts[index].email = email;
+ //           return true;
+ //       }
+ //       return false;
+ //   }
 
     updatePoint(key,name,lat, long) {
         let index1 = this.getIndex(key);
@@ -639,13 +627,13 @@ class StubAPI {
 
 
 
-    upvoteComment(postId, commentId) {
-        let post = this.getPost(postId);
-        let index = _.findIndex(post.comments, c => c.id === commentId);
-        if (index !== -1) {
-            post.comments[index].upvotes += 1;
-        }
-    }
+ //   upvoteComment(postId, commentId) {
+ //       let post = this.getPost(postId);
+ //       let index = _.findIndex(post.comments, c => c.id === commentId);
+ //       if (index !== -1) {
+ //           post.comments[index].upvotes += 1;
+ //       }
+ //   }
 
 
     upvoteComment2(pointId, commentId) {

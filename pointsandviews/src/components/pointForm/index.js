@@ -17,10 +17,13 @@ export default class Form extends Component {
 
 
     render() {
+        console.log("THIS IS POINT FORM, I DONT BELIEVED IT USED, plaese remove");
+
         return (
             <form  className="form bg-dark text-light">
             <h3>Add a comment on Point of Interest</h3>
         <div className="form-group">
+
             <input type="text"
         className="form-control"
         placeholder="Title"

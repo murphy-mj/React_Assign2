@@ -10,20 +10,14 @@ import fakeAuth from "./fakeAuth";
 const PointPage = props => {
     const { id } = props.match.params;
     const {testa} = props.location.state;
-    console.log(id + " <--from Point Page, point id");
     const point = api.getPoint(id);
+    console.log(id + " <--from Point Page, point id");
     console.log(" point page testa attribute" + `${testa}`);
     point.poiType = testa;
     console.log("i'm in Page Point");
     console.log(" props obj history locatio path" + props.history.location.pathname);
     console.log(" points new atribute" + `${point.poiType}`);
-    // !props.history.location.pathname.endsWith("/private") &&
-    // //   <PointPublic point={point}/>
-    //<Route path={`/point/:id/privates`}
-    //               render= {(props) => <PointPrivate {...props} point={point} /> } />
-    //  {!props.history.location.pathname.endsWith("/privates") && (
-    //               <Link className="btn btn-primary active" to={`/point/${id}/privates`}> See Private Data </Link>
-    //           )}
+
     if( props.history.location.state = "undefined") {
         console.log("In point apgrhistory state is un defined ");
     };
@@ -35,7 +29,7 @@ const PointPage = props => {
            <PointPublic point={point} prevmenu={props.history.location.pathname}/>
            <NewsList posts={point.comments} point={point}/>
            {!props.history.location.pathname.endsWith("/private") && (
-                   <Link  to={`/point/${id}/private`}> See Private Data </Link>
+                   <Link  to={`/point/${id}/private`}><button> See Private Data</button> </Link>
            )}
           <Route path={`/point/:id/private`}
               render={ (props) => <PointPrivate point={point} prevmenu={props.history.location.pathname}/> } />

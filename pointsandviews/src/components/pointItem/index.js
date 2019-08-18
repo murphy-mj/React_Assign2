@@ -11,7 +11,7 @@ export default class PointItem extends Component {
 
 
     render() {
-
+         console.log("IS THIS ANOTHER NOT USED, POINTITEM ?");
         return (
             <Fragment>
 

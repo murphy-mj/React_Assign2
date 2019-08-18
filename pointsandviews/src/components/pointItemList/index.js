@@ -8,6 +8,8 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 export default class PointItemList extends Component {
     render() {
+        console.log("IS THERE A NEED FOR THIS, pointItemList");
+
         let items = this.props.posts.map((post,index) =>
             (<PointItem key={post.id} post={post}  upvoteHandler={this.props.upvoteHandler} /> )
     )

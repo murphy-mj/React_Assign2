@@ -6,11 +6,9 @@ import _ from "lodash";
 
 export default class NewsList extends Component {
 
-   // let  srtPosts[];
-   // srtPosts = _.sortBy(this.props.posts, post => -post.upvotes);
+ // this method being passed a prop to the Newstem/Comment component
 
     upvoteCommentHandler = (CommentId) => {
-        console.log(" in News List upVoteComment handler, point is " +this.props.point.cursor)
         api.upvoteComment2(this.props.point.cursor, CommentId);
         this.setState({});
     };
@@ -21,7 +19,7 @@ export default class NewsList extends Component {
         let items = {};
         {this.props.posts[0] ? (
           // items = this.props.posts.map((post, index) => (
-          // created a array of news items soerted bt upvotes
+          // created a array of news items sorted bt upvotes
            items = _.sortBy(this.props.posts, post => -post.upvotes).map((post, index) => (
             < NewsItem key = {index} post = {post} upvoteCommentHandler = {this.upvoteCommentHandler} />
            ))
@@ -32,11 +30,11 @@ export default class NewsList extends Component {
             <Fragment>
             {items[0] ? (
             < Fragment >
-            <p> News List</p>
+            <h4>List of comments, ordered by popularity </h4>
             {items}
             </Fragment>
     ) :(
-        <p> I am afraid NO News List</p>
+        <p> Sorry no comments have been added as yet</p>
         )}
         </Fragment>
     )

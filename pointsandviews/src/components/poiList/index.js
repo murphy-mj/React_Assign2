@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { withRouter,Route,Link } from "react-router-dom";
+import { withRouter} from "react-router-dom";
 import Point from "../pointofinterest/";
 import PointView from "../pointofinterestView/";
 import fakeAuth from "../fakeAuth";

@@ -1,13 +1,6 @@
 import React, { Component } from "react";
-import ReactDOM from "react-dom";
-import {
-    BrowserRouter,
-    Route,
-    Redirect,
-    Switch,
-    Link,
-    withRouter
-} from "react-router-dom";
+//import ReactDOM from "react-dom";
+import {Route, Redirect} from "react-router-dom";
 import api from "../../dataStore/stubAPI";
 import fakeAuth from "../fakeAuth/";
 import PoiPrivate from "../poiPrivate";

@@ -3,21 +3,17 @@ import { Link } from "react-router-dom";
 import "./point.css";
 import "../../fontawesome";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import buttons from "../../config/buttonsConfig";
-import NewsForm from "../newsForm";
-import api from '../../dataStore/stubAPI';
+//import buttons from "../../config/buttonsConfig";
+//import NewsForm from "../newsForm";
+//import api from '../../dataStore/stubAPI';
 import PropTypes from "prop-types";
-import { BrowserRouter, Route, Redirect, Switch } from "react-router-dom";
+//import { BrowserRouter, Route, Redirect, Switch } from "react-router-dom";
 
 
 class PointView extends Component {
 
-
-
-
-
     handleVote = () => {
-        console.log("handleVote   ");
+      //  console.log("handleVote   ");
         this.props.upvoteHandler(this.props.point.cursor);
     };
 

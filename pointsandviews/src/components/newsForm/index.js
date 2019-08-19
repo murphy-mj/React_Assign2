@@ -1,6 +1,6 @@
 import React, { Component,Fragment } from 'react';
 import './newsForm.css';
-import {withRouter,Route,Redirect} from "react-router-dom";
+import {withRouter} from "react-router-dom";
 import api from "../../dataStore/stubAPI";
 import { Link } from "react-router-dom";
 
@@ -30,9 +30,9 @@ class NewsForm extends Component {
         // these are info purposes only in case required  for additional reporting
         // these prior url and the point area poiType eg Noth West
         const {testa,prevmenu} = this.props.location.state;
-        console.log(`${this.props.match.params.id}` +"param id");
-        console.log(" additionl props 2" + `${testa}`);
-        console.log(" additionl props 2 prev menu " + `${prevmenu}`);
+        console.log(`${this.props.match.params.id} param id`);
+        console.log(` additionl props 2  ${testa}`);
+        console.log(` additionl props 2 prev menu  ${prevmenu}`);
 
          // the link to return to comment, just return the app to its Public page, which has its list of commens and Map
         // the pathname will route the app back to its PointPage

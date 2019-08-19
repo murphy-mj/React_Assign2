@@ -1,5 +1,7 @@
-
-
+import React, {Component, Fragment } from "react";
+import "../../fontawesome";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { Link } from "react-router-dom";
 
 
 

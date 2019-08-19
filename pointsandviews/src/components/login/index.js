@@ -1,15 +1,8 @@
 import React, { Component,Fragment } from "react";
-import ReactDOM from "react-dom";
-import {
-    BrowserRouter,
-    Route,
-    Redirect,
-    Switch,
-    Link,
-    withRouter
-} from "react-router-dom";
+//import ReactDOM from "react-dom";
+import {Link} from "react-router-dom";
 import fakeAuth from "../fakeAuth";
-import PrivateRoute from "../privateRoute";
+//import PrivateRoute from "../privateRoute";
 
 
 class Login extends Component {

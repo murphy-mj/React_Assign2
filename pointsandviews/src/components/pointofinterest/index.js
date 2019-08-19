@@ -4,7 +4,8 @@ import "../../fontawesome";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import buttons from "../../config/buttonsConfig";
 import PropTypes from "prop-types";
-import { BrowserRouter, Route, Redirect, Switch, Link, withRouter} from "react-router-dom";
+import {Link} from "react-router-dom";
+//import { BrowserRouter, Route, Redirect, Switch, Link, withRouter} from "react-router-dom";
 
 class Point extends Component {
 
@@ -16,8 +17,8 @@ class Point extends Component {
 
 
     static propTypes = {
-        lat: PropTypes.number,
-        long: PropTypes.number,
+      //  lat: PropTypes.number,
+      //  long: PropTypes.number,
         name:PropTypes.string
     }
 

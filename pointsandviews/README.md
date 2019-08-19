@@ -127,45 +127,43 @@ Briefly explain any non-trivial aspects of the model . . . . .
 
 . . . . . 
 Screenshots of app's views with brief statements of their use 
-(see examples below) . . . . . . .
+please see Screen prints of App pointsandviews.docx
 
-![][main]
-
->> Shows a card for each contact in the datastore. Contact list can be filtered by name and gender. A contact can be edited or deleted a contact. 
+>> Shows a card for each point of interest in the datastore. 
+point list can be filtered by name and location. 
+A point of interest can be edited or deleted, plaese see cypress tests 
 
 
 ## Routing.
 
-. . . . List each route supported by the app. For each one state the associated view and whether it's public/private (requires authentication) . . . . .
+. . . . List each route supported by the app. 
+For each one state the associated view and whether it's public/private (requires authentication) . . . . .
+The the main /app page requires that the user goes through login, rather than diection changing url
+the Prvate page of the Point of interest require auth. 
 
-- /articles (public)- displays all published articles - title and author only.
-- /articles/:id (private) - detail view of a particular article.
-- etc
-- etc
+
 
 ## Storybook.
 
-. . . . . Include a screenshot of the fully expanded list of stories from the tool's UI (see below). Group the stories appropriately (e.g. Contact page group) . . . .
+. . . . . Include a screenshot of the fully expanded list of stories from the tool's UI (see below). 
+Group the stories appropriately (e.g. Contact page group) . . . .
 
-
-
-. . . . State any Storybook add-ons used and include a screenshot(s) to illustrate.
 
 ## Backend.
 
-. . . . . Briefly explain the backend/API used by the app (Stub, JSON-server, Custom Node, Open). For custom Node or Open API, list the endpoints it provides to your app and state the purpose of each
-
+. . . . . Briefly explain the backend/API used by the app 
+(Stub, JSON-server.
+THe app is set up to access the api and is commented out.
+The App uses the full json file save to the directory for testing purposes
 
 ## Authentication (if relevant).
-
-. . . . 
 Briefly state the server-side authentication service used by your React app 
 Only a Mock-auth is used, depending on the login button chosen.
 
 ## Independent learning.
-
-. . . . . 
-State the non-standard aspects of React or other related technologies that you researched and applied in this assignment . . . . .
+I spent a lot of the summer, working on understanding React, it was mostly repeatly running the lectutres, and
+ a couple of online tutorials,  https://docs.cypress.io, https://storybook.js.org/docs/guides/guide-react/
+. . . . . . . .
 
 
 

@@ -1,24 +1,22 @@
-import React, {Component, Fragment } from "react";
+import React, {Fragment } from "react";
 import { withRouter,Route,Link } from "react-router-dom";
 import api from "../dataStore/stubAPI";
 import PointPublic from "../components/poiPublic/";
 import PointPrivate from "../components/poiPrivate/";
-import NewsForm from "../components/newsForm/";
+//import NewsForm from "../components/newsForm/";
 import NewsList from "../components/newsList/";
-import fakeAuth from "./fakeAuth";
+//import fakeAuth from "./fakeAuth";
 
 const PointPage = props => {
     const { id } = props.match.params;
     const {testa} = props.location.state;
     const point = api.getPoint(id);
-    console.log(id + " <--from Point Page, point id");
-    console.log(" point page testa attribute" + `${testa}`);
+    console.log(`point page testa attribute ${testa}`);
     point.poiType = testa;
-    console.log("i'm in Page Point");
-    console.log(" props obj history locatio path" + props.history.location.pathname);
-    console.log(" points new atribute" + `${point.poiType}`);
+    console.log(`props obj history locatio path  props.history.location.pathname`);
+    console.log(` points new atribute ${point.poiType}`);
 
-    if( props.history.location.state = "undefined") {
+    if( props.history.location.state == "undefined") {
         console.log("In point apgrhistory state is un defined ");
     };
 

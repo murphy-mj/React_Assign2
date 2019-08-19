@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import "./filterControls.css"
 import request from "superagent";
 import api from "../../dataStore/stubAPI";
-import Point from "../pointofinterest";
+//import Point from "../pointofinterest";
 
 
 export default class FilterControls extends Component {

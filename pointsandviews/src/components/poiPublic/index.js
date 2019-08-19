@@ -6,8 +6,9 @@ import "./poiPublic.css";
 import { Link } from "react-router-dom";
 //import PublicProfile from "../poiPublic/publicProfile";
 import Map from "../map/";
+//const REACT_APP_GAPI_KEY1 = process.env.REACT_APP_GAPI_KEY.trim();
 const REACT_APP_GAPI_KEY1 = "AIzaSyD5sVluWImCyGXbY-hizgc61Pec_-yTTJc";
-    //process.env.REACT_APP_GAPI_KEY.trim();
+
 
 
 export default ({ point, ...rest}) => {

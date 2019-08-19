@@ -40,7 +40,7 @@ class PointView extends Component {
             <h5 className="card-title "> {`${this.props.point.name} `}</h5>
         <Fragment>
         <span className=" ptr" onClick={this.handleVote}>
-            <FontAwesomeIcon icon={["fas", "arrow-circle-left"]} size="2x" />
+            <FontAwesomeIcon icon={["fas", "thumbs-up"]} size="1x" />
             {`Current Votes ${this.props.point.upvotes}`}
         </span>
 
@@ -52,7 +52,7 @@ class PointView extends Component {
             }
         }}>
         <p>
-        <FontAwesomeIcon icon={["fas", "phone"]} />
+        <FontAwesomeIcon icon={["fas", "star"]} size="1x" />
         <span>Lets see some detail </span>
         </p>
         </Link>
@@ -66,7 +66,7 @@ class PointView extends Component {
         }}>
 
         <p>
-        <FontAwesomeIcon icon={["fas", "phone"]} />
+        <FontAwesomeIcon icon={["fas", "comments"]} size="1x" />
         <span>Lets add a comment</span>
         </p>
         </Link>

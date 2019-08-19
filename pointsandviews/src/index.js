@@ -35,8 +35,10 @@ class Router extends Component {
 // });
 
       // using json file holding all points of interest, as during testing can exceed api allowance
+      // if you wish to use the http source, uncomment lines 25 to 35, and comment out lines 39 and 40
       let results = jsonResponse;
       api.initializePoints3(results);
+
       this.setState({});
       console.log("display a point to show additional properties")
       console.log(api.points1[0].pois[0]);

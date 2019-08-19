@@ -13,7 +13,7 @@ class NewsItem extends Component {
             <Fragment>
             <span className="cur_vote" onClick={this.handleCVote}>
             {` ${this.props.post.upvotes}   current vote`}
-            <FontAwesomeIcon icon={["fas", "arrow-circle-left"]} size="1x" />
+            <FontAwesomeIcon icon={["fas", "thumbs-up"]} size="1x" />
             </span>
             <p className="comment">
             {this.props.post.comment} **author: {this.props.post.promoter}

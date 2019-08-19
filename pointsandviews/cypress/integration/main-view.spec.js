@@ -105,8 +105,9 @@ describe("Main View ", () => {
                     .find("button")
                     .as("cardbuttons")
                 cy.get("@targetcard")
-                    .find("[data-icon=phone]").eq(1)
-                    .next()
+                cy.get("span")
+                    .contains("latitude")
+                 //   .next()
                     .invoke("text")
                     .then($text => {
                         cy.get("@cardbuttons")
@@ -135,8 +136,9 @@ describe("Main View ", () => {
                     .find("button")
                     .as("cardbuttons")
                 cy.get("@targetcard")
-                    .find("[data-icon=phone]").eq(1)
-                    .next()
+                cy.get("span")
+                    .contains("latitude")
+                   // .next()
                     .invoke("text")
                     .then($text => {
                         cy.get("@cardbuttons")
@@ -202,7 +204,7 @@ describe("Main View ", () => {
             cy.get(".badge").should("contain", 23);
             cy.get(".card").eq(1).as("targetcard")
             cy.get("@targetcard")
-                .find("[data-icon=phone]").eq(0)
+                .find("[data-icon=star]")
                 .click()
             cy.get("span")
                 .contains("Back")
@@ -218,7 +220,7 @@ describe("Main View ", () => {
             cy.get(".badge").should("contain", 23);
             cy.get(".card").eq(1).as("targetcard")
             cy.get("@targetcard")
-                .find("[data-icon=phone]").eq(0)
+                .find("[data-icon=star]")
                 .click()
             cy.get("button")
                 .contains("See Private Data")

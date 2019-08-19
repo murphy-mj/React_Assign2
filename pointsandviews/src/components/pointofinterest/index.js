@@ -5,6 +5,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import buttons from "../../config/buttonsConfig";
 import PropTypes from "prop-types";
 import {Link} from "react-router-dom";
+//import {faStar, faThumbsUp,faComments} from "@fortawesome/free-solid-svg-icons";
 //import { BrowserRouter, Route, Redirect, Switch, Link, withRouter} from "react-router-dom";
 
 class Point extends Component {
@@ -17,8 +18,8 @@ class Point extends Component {
 
 
     static propTypes = {
-      //  lat: PropTypes.number,
-      //  long: PropTypes.number,
+        lat: PropTypes.number,
+        long: PropTypes.number,
         name:PropTypes.string
     }
 
@@ -149,7 +150,7 @@ class Point extends Component {
         ):(
         <Fragment>
         <span className=" ptr" onClick={this.handleVote}>
-            <FontAwesomeIcon icon={["fas", "arrow-circle-left"]} size="1x" />
+            <FontAwesomeIcon icon={["fas", "thumbs-up"]} size="1x" />
             {`Popular Vote : ${this.props.point.upvotes}`}
         </span>
 
@@ -174,7 +175,7 @@ class Point extends Component {
             }
         }}>
         <p>
-        <FontAwesomeIcon icon={["fas", "phone"]} />
+        <FontAwesomeIcon icon={["fas", "star"]} size="lx" />
         <span>Details </span>
         </p>
         </Link>
@@ -187,7 +188,7 @@ class Point extends Component {
             }
         }}>
             <p>
-            <FontAwesomeIcon icon={["fas", "phone"]} />
+            <FontAwesomeIcon icon={["fas", "comments"]} size="lx"/>
             <span>Comment</span>
             </p>
         </Link>

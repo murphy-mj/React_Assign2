@@ -16,11 +16,12 @@ export default ({ point, ...rest}) => {
     const address = capitalize(
         `${point.coordinates.geo.long}, ${point.coordinates.geo.lat}`
     );
+    const location = {lng:parseFloat(point.coordinates.geo.long),lat:parseFloat(point.coordinates.geo.lat)};
 
-    console.log(`${point.coordinates.geo.long}`);
-    console.log(`${point.coordinates.geo.lat}`);
-    //   const location = {lng:${point.coordinates.geo.long},lat:${point.coordinates.geo.lat}};
-   const location = {lng:-7.142379, lat: 55.89 };
+   // console.log(`${point.coordinates.geo.long}`);
+   // console.log(`${point.coordinates.geo.lat}`);
+   //  console.log({location});
+   //const location = {lng:-7.142379, lat: 55.89 };
     console.log(`${point.poiType}  poi Public prop`);
     console.log(`${rest.prevmenu}  poi previous menu`);
 

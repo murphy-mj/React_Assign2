@@ -169,7 +169,6 @@ I spent a lot of the summer, working on understanding React, it was mostly repea
 . . . . . . . .
 
 outstanding issues with App.
-Google Map location is hard coded.
 For EDIT and Delete, the select area needs to be set to something other than 'all'
 
 

@@ -168,6 +168,11 @@ A point of interest can be edited or deleted, please see cypress tests
 
 
 
+
+
+
+
+
 ## Routing.
 
 .List each route supported by the app. 

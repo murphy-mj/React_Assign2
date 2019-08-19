@@ -15,6 +15,9 @@ SeniorAdmin, which has additional access to edit and delete.
 The authorisation uses a fake Authorisation
 The login page, has two button one for each user, the general admin, has a simple isAuthenticated and isAdmin flags
 /App is the main page of the Application, and once you are logged in.
+The seniorAdmin can edit and delete a point.
+all users can add a comment, view public and private data
+Senior and General Admin, have different views displayed, at the /app view.
 
 List of user features  . . . .
 
@@ -161,12 +164,13 @@ Briefly state the server-side authentication service used by your React app
 Only a Mock-auth is used, depending on the login button chosen.
 
 ## Independent learning.
-I spent a lot of the summer, working on understanding React, it was mostly repeatly running the lectutres, and
+I spent a lot of the summer, working on understanding React, it was mostly repeatly re-running the lectutres, and
  a couple of online tutorials,  https://docs.cypress.io, https://storybook.js.org/docs/guides/guide-react/
 . . . . . . . .
 
-
-
+outstanding issues with App.
+Google Map location is hard coded.
+For EDIT and Delete, the select area needs to be set to something other than 'all'
 
 
 

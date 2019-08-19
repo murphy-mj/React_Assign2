@@ -135,16 +135,6 @@ class StubAPI {
                     this.points1 = results[index].pois;
                 };
                 console.log(this.points1[0] +" pois first");
-                //  console.log(this.points1[0][0].cursor +" cursor");
-                // api.initializePoints(results[index].pois);
-                //   api.initializePoints2(results[0].pois);
-                // this.setState({});
-    //        } else {
-    //            console.log(error);
-   //             console.log("issue with results");
-   //         }
-   //     });
-        //  console.log(points1[0][0].cursor + "2nd array first obj");
 
         return this.points1;
     }
@@ -186,20 +176,6 @@ class StubAPI {
                  //   this.points1.push(results[i].pois);
                 }
 
-
-            //    this.points1.map(c => {
-            //        console.log(c.name +" haha2");
-            //    });
-
-                //  console.log(this.points1[0][0].cursor +" cursor");
-                // api.initializePoints(results[index].pois);
-                //   api.initializePoints2(results[0].pois);
-                // this.setState({});
-    //        } else {
-    //            console.log(error);
-    //            console.log("issue with results");
-    //        }
-    //    });
         console.log(this.points1 + "ret points one");
 
         return this.points1;
@@ -213,47 +189,6 @@ class StubAPI {
         return this.category;
     }
 
- //   getAllContacts() {
-//        return this.contacts;
-//    }
-
-
-
- //   add(title, author, link,cursor) {
- //       let id = 1;
- //       let last = _.last(this.posts);
- //       if (last) {
-//            id = last.id + 1;
-//        }
-//        let len = this.posts.length;
-//        let newLen = this.posts.push({
-//            id,
-//            title,
-//            author,
-//            link,
-//            comments: [],
-//            cursor,
-//            upvotes: 0
-//        });
-//        return newLen > len;
-//    }
-
- //   addPointPost(title, promoter,cursor) {
- //       let id = 1;
- //       let last = _.last(this.postPoints);
- //       if (last) {
- //           id = last.id + 1;
- //       }
- //       let len = this.postPoints.length;
- //       let newLen = this.postPoints.push({
- //           id,
- //           title,
- //  /         promoter,
- //           cursor,
- //           upvotes: 0
- //       });
- //       return newLen > len;
- //   }
 
 
     addComment(comment, promoter, cursor) {
@@ -271,12 +206,6 @@ class StubAPI {
     }
 
 
-
-
-
-//    addContact(){
-//
-//    }
 
     upvote(id) {
         let index = _.findIndex(this.posts, post => post.id === id);
@@ -364,48 +293,6 @@ class StubAPI {
         return result;
     }
 
- //   getPointOriginal(id) {
- //       console.log("get Points"+ id);
- //       this.points.map((point,index) => console.log(point.cursor));
-//
-//        let index = _.findIndex(this.points, point => point.cursor == id);
-//        console.log("post get Points, point index"+ index)
-//        let result = index !== -1 ? this.points[index] : null;
-//        // console.log("inside getPoint index is "+ index)
-//        return result;
-//    }
-
-
-
-
-
-
-   // let items = points.map((point,index) =>
-   //     (<PointItem key={index} point={point}/> ))
-
-
-
-//    getPoint2(id) {
-//        console.log(this.points);
-//        let index = _.findIndex(this.points, point => point.cursor == id);
-//        let result = index !== -1 ? this.points[index] : null;
-//        console.log("inside getPoint index is "+ index)
-//        return result;
-//    }
-
-
-
-
-//    getContact(id){
-//        let index = _.findIndex(
-//            this.contacts,
-//            contact => `${contact.phone}${contact.cell}` === id
-//        );
-//        if (index !== -1) {
-//            return this.contacts[index];
-//        }
-//        return null;
-//    }
 
 
     getComments(id){
@@ -420,16 +307,6 @@ class StubAPI {
         return null;
     }
 
-
-
-
-
-
-
- //   deleteContact(k) {
- //       let elements = _.remove(this.contacts, contact => contact.phone === k);
- //       return elements;
- //   }
 
 
 
@@ -470,37 +347,20 @@ class StubAPI {
 
 
 
- //   initializeContacts(contacts) {
- //       this.contacts = contacts;
- //   }
 
 
-// remove
-//    initializePoints(pointsIn) {
-//        console.log("inside initilaizeP");
-// adding additional properties,upvotes and comments to the initial data
-//        let items = pointsIn.map((point) =>({...point,['comments']:[],['upvotes']:1}));
-//        this.points = items;
-//        console.log(this.points);
-//        console.log(this.points[1].name);
-//        console.log(this.points[1].upvotes);
-//    }
 
 /* used in  index.js file, here we take in array of points, and as we go through each point in the Array,
    we add 2 additional properties to each point, an array to hold comments and an upvote property, with a default value of 1.
    pointsIn this is the json data fron the API.
    points array, holds all the points with additional properties
-   points1 is an Array of
+   the list of areas is extracted and placed in an array called categories, used for the select list in header Filter
+
 
    */
     initializePoints3(pointsIn) {
         let items = pointsIn.map((point) =>({...point,['comments']:[],['upvotes']:1}));
         this.points = items;
-        //console.log("display the names of the different areaa");
-        //this.category.map((categ) =>(
-        //    console.log(categ)
-        //));
-
         //console.log("inside initilaizeP categ points");
        // pointsIn.map((categ) =>(
        //     console.log(categ.title)
@@ -514,8 +374,6 @@ class StubAPI {
         pointsIn.map((categ) =>(
         this.points1.push(categ)
     ));
-
-
         this.points2 = [];
         for (var i=0; i<this.points1.length; i++) {
             let items = this.points1[i].pois.map((point) =>({...point,['comments']:[],['upvotes']:1}));
@@ -529,8 +387,9 @@ class StubAPI {
 
 
  // used in App.js
+    // returning an array of points based on the area selected by user (poiType)
     getAllPoints3(poiType) {
-                // returning an array of points based on the area selected by user (poiType)
+
                 if (poiType == "all") {
                     this.pointsP = [];
                     for (var c = 0; c <this.points2.length; c++) {
@@ -558,33 +417,6 @@ class StubAPI {
 }
 
 
-
-
-
-
-
-
-
-
-  //  initializePoints2(points) {
-  //      console.log("inside initilaizeP2");
-  //      //console.log(points);
-  //      let items = points.map((point,index) =>
-  //          (<PointItem key={index} point={point}/> ))
-  //      this.points2 = items;
-//
- //   }
-
-
- //  updateContact(key, email, phone) {
- //       let index = _.findIndex(this.contacts, contact => contact.phone === key);
- //       if (index !== -1) {
- //           this.contacts[index].phone = phone;
- //           this.contacts[index].email = email;
- //           return true;
- //       }
- //       return false;
- //   }
 
     updatePoint(key,name,lat, long) {
         let index1 = this.getIndex(key);
@@ -641,7 +473,55 @@ class StubAPI {
     }
 }
 
-}
 
+
+//   getAllContacts() {
+//        return this.contacts;
+//    }
+
+
+
+    //   add(title, author, link,cursor) {
+    //       let id = 1;
+    //       let last = _.last(this.posts);
+    //       if (last) {
+//            id = last.id + 1;
+//        }
+//        let len = this.posts.length;
+//        let newLen = this.posts.push({
+//            id,
+//            title,
+//            author,
+//            link,
+//            comments: [],
+//            cursor,
+//            upvotes: 0
+//        });
+//        return newLen > len;
+//    }
+
+    //   addPointPost(title, promoter,cursor) {
+    //       let id = 1;
+    //       let last = _.last(this.postPoints);
+    //       if (last) {
+    //           id = last.id + 1;
+    //       }
+    //       let len = this.postPoints.length;
+    //       let newLen = this.postPoints.push({
+    //           id,
+    //           title,
+    //  /         promoter,
+    //           cursor,
+    //           upvotes: 0
+    //       });
+    //       return newLen > len;
+    //   }
+
+
+
+
+
+
+}
 
 export default new StubAPI();

@@ -151,15 +151,14 @@ point list can be filtered by name and location.
 A point of interest can be edited or deleted, please see cypress tests 
 
 
-![login](C:\Skills2_Proj\React_Assign2\pointsandviews\ScreenPrints\login.jpg)
-![login](C:\Skills2_Proj\React_Assign2\pointsandviews\ScreenPrints\snrAdmin_initial.png)
-![login](C:\Skills2_Proj\React_Assign2\pointsandviews\ScreenPrints\SnrAdmin_AreaSelect.png.jpg)
-![login](C:\Skills2_Proj\React_Assign2\pointsandviews\ScreenPrints\SnrAdmin_Edit.png)
-![login](C:\Skills2_Proj\React_Assign2\pointsandviews\ScreenPrints\commentBox.png)
-![login](C:\Skills2_Proj\React_Assign2\pointsandviews\ScreenPrints\public_withImage_comments.png)
-![login](C:\Skills2_Proj\React_Assign2\pointsandviews\ScreenPrints\Private.png)
-![login](C:\Skills2_Proj\React_Assign2\pointsandviews\ScreenPrints\Admin_initial.png)
-![login](C:\Skills2_Proj\React_Assign2\pointsandviews\ScreenPrints\SnrAdmin_Edit.png)
+![Login](https://github.com/murphymj/React_Assign2/blob/master/pointsandviews/ScreenPrints/login.jpg)
+![Snr Admin Initial View](https://github.com/murphymj/React_Assign2/blob/master/pointsandviews/ScreenPrints/snrAdmin_initial.png)
+![Area Selection](https://github.com/murphymj/React_Assign2/blob/master/pointsandviews/ScreenPrints/SnrAdmin_AreaSelect.png.jpg)
+![Snr Admin Edit Point](https://github.com/murphymj/React_Assign2/blob/master/pointsandviews/ScreenPrints/SnrAdmin_Edit.png)
+![Comment Box](https://github.com/murphymj/React_Assign2/blob/master/pointsandviews/ScreenPrints/commentBox.png)
+![Public View](https://github.com/murphymj/React_Assign2/blob/master/pointsandviews/ScreenPrints/public_withImage_comments.png)
+![Private](https://github.com/murphymj/React_Assign2/blob/master/pointsandviews/ScreenPrints/Private.png)
+![Admin initial View](https://github.com/murphymj/React_Assign2/blob/master/pointsandviews/ScreenPrints/Admin_initial.png)
 
 
 ## Routing.
@@ -183,10 +182,8 @@ the Private page of the Point of interest require auth.
 
 ## Storybook.
 
-![login](C:\Skills2_Proj\React_Assign2\pointsandviews\ScreenPrints\stories.png)
 
-
-
+![Story Book stories](https://github.com/murphymj/React_Assign2/blob/master/pointsandviews/ScreenPrints/stories.png)
 
 
 
@@ -195,7 +192,7 @@ the Private page of the Point of interest require auth.
 
 ##CPYRESS Tests
 
-![login](C:\Skills2_Proj\React_Assign2\pointsandviews\ScreenPrints\cypressTests.png)
+![Cypress Tests](https://github.com/murphymj/React_Assign2/blob/master/pointsandviews/ScreenPrints/cypressTests.png)
 
 
 

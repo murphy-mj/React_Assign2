@@ -1,8 +1,8 @@
 ```
 # ICT Skills 2 Assignment - Single Page app.
 
-#####Name: pointsandviews 
-#####name Martin Murphy
+####Name: pointsandviews 
+####name Martin Murphy
 ## Overview.
 
 The App is based on data from
@@ -146,10 +146,6 @@ post this call to i have added a console.log to display the first point of the f
 Shows a card for each point of interest in the datastore. 
 point list can be filtered by name and location. 
 A point of interest can be edited or deleted, please see cypress tests 
-![no](https://github.com/murphy-mj/React_Assign2/blob/master/pointsandviews/ScreenPrints/Login.png?raw=true)
-
-
-https://github.com/murphy-mj/React_Assign2/blob/master/pointsandviews/ScreenPrints/Login.png?raw=true
 
 ![Login](https://github.com/murphy-mj/React_Assign2/blob/master/pointsandviews/ScreenPrints/login.jpg?raw=true)
 ![Snr Admin Initial View](https://github.com/murphy-mj/React_Assign2/blob/master/pointsandviews/ScreenPrints/snrAdmin_initial.png?raw=true)
@@ -190,7 +186,7 @@ the Private page of the Point of interest require auth.
 
 
 
-##CPYRESS Tests
+##Cypress Tests
 
 ![Cypress Tests](https://github.com/murphy-mj/React_Assign2/blob/master/pointsandviews/ScreenPrints/cypressTests.png?raw=true)
 
@@ -227,7 +223,7 @@ I cannot get the environment variable to feed in, have tried using env-cmd with 
 
 
 
-Standard output from Create React App
+#Standard output from Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 ## Available Scripts

@@ -3,6 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="14ed94cc-cbe2-45b4-b7b4-f09c14191bb1" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pointsandviews/README2.md" beforeDir="false" afterPath="$PROJECT_DIR$/pointsandviews/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pointsandviews/ScreenPrints/ICT Skills 2 Assignment - Single Page appREADME.md" beforeDir="false" afterPath="$PROJECT_DIR$/pointsandviews/ScreenPrints/ICT Skills 2 Assignment - Single Page appREADME.md" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -15,7 +17,20 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf />
+    <leaf>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/pointsandviews/README.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="SPLIT">
+              <first_editor relative-caret-position="1503">
+                <caret line="151" column="76" selection-start-line="151" selection-start-column="76" selection-end-line="151" selection-end-column="76" />
+              </first_editor>
+              <second_editor />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -91,63 +106,7 @@
               <item name="React_Assign2" type="b2602c69:ProjectViewProjectNode" />
               <item name="React_Assign2" type="462c0819:PsiDirectoryNode" />
               <item name="pointsandviews" type="462c0819:PsiDirectoryNode" />
-              <item name=".storybook" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="React_Assign2" type="b2602c69:ProjectViewProjectNode" />
-              <item name="React_Assign2" type="462c0819:PsiDirectoryNode" />
-              <item name="pointsandviews" type="462c0819:PsiDirectoryNode" />
-              <item name="cypress" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="React_Assign2" type="b2602c69:ProjectViewProjectNode" />
-              <item name="React_Assign2" type="462c0819:PsiDirectoryNode" />
-              <item name="pointsandviews" type="462c0819:PsiDirectoryNode" />
-              <item name="cypress" type="462c0819:PsiDirectoryNode" />
-              <item name="integration" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="React_Assign2" type="b2602c69:ProjectViewProjectNode" />
-              <item name="React_Assign2" type="462c0819:PsiDirectoryNode" />
-              <item name="pointsandviews" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="React_Assign2" type="b2602c69:ProjectViewProjectNode" />
-              <item name="React_Assign2" type="462c0819:PsiDirectoryNode" />
-              <item name="pointsandviews" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="React_Assign2" type="b2602c69:ProjectViewProjectNode" />
-              <item name="React_Assign2" type="462c0819:PsiDirectoryNode" />
-              <item name="pointsandviews" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="header" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="React_Assign2" type="b2602c69:ProjectViewProjectNode" />
-              <item name="React_Assign2" type="462c0819:PsiDirectoryNode" />
-              <item name="pointsandviews" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="pointofinterest" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="React_Assign2" type="b2602c69:ProjectViewProjectNode" />
-              <item name="React_Assign2" type="462c0819:PsiDirectoryNode" />
-              <item name="pointsandviews" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="config" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="React_Assign2" type="b2602c69:ProjectViewProjectNode" />
-              <item name="React_Assign2" type="462c0819:PsiDirectoryNode" />
-              <item name="pointsandviews" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="dataStore" type="462c0819:PsiDirectoryNode" />
+              <item name="stories" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -198,18 +157,17 @@
       <workItem from="1566250375328" duration="10000" />
       <workItem from="1566250501369" duration="7784000" />
       <workItem from="1566371098443" duration="1930000" />
-      <workItem from="1566505220479" duration="2381000" />
+      <workItem from="1566505220479" duration="3194000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="153168000" />
+    <option name="totallyTimeSpent" value="153981000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.21546596" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.21546596" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -221,7 +179,7 @@
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="9" visible="true" weight="0.34135976" />
+      <window_info anchor="bottom" id="Terminal" order="9" visible="true" weight="0.34135976" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -433,14 +391,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor />
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/pointsandviews/src/components/pointItemList/index.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="272">
@@ -627,11 +577,19 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pointsandviews/README2.md">
+    <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="146">
-            <caret line="232" lean-forward="true" selection-start-line="232" selection-end-line="232" />
+          <first_editor />
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pointsandviews/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="1503">
+            <caret line="151" column="76" selection-start-line="151" selection-start-column="76" selection-end-line="151" selection-end-column="76" />
           </first_editor>
           <second_editor />
         </state>

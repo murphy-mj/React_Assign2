@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="14ed94cc-cbe2-45b4-b7b4-f09c14191bb1" name="Default Changelist" comment="" />
+    <list default="true" id="14ed94cc-cbe2-45b4-b7b4-f09c14191bb1" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pointsandviews/ScreenPrints/ICT Skills 2 Assignment - Single Page appREADME.md" beforeDir="false" afterPath="$PROJECT_DIR$/pointsandviews/ScreenPrints/ICT Skills 2 Assignment - Single Page appREADME.md" afterDir="false" />
+    </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -154,7 +157,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/pointsandviews/src/dataStore/all.js" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../MarkupTesting" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
@@ -195,15 +198,16 @@
       <workItem from="1566250375328" duration="10000" />
       <workItem from="1566250501369" duration="7784000" />
       <workItem from="1566371098443" duration="1930000" />
-      <workItem from="1566505220479" duration="647000" />
+      <workItem from="1566505220479" duration="2381000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="151434000" />
+    <option name="totallyTimeSpent" value="153168000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.21546596" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
